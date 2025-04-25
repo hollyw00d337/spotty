@@ -1,0 +1,163 @@
+version: '3.1'
+nlu:
+  -intent: realizar_pago
+  examples: |
+  -hola, quiero pagar mi servicio
+  -buenas tardes, me gustaria hacer un pago
+  -spotty, quiero pagar mi internet
+  -buenas, necesito pagar mi celular
+  -hola spotty, ¿me puedes ayudar a pagar?
+  -hey, tengo que hacer mi pago
+  -quiero pagar mi recibo
+  -buen dia, vengo a realizar mi pago
+  -hola, como pago mi servicio
+  -spotty, ¿como puedo pagar?
+  -intent: soporte_tecnico
+  examples: |
+  -hola, no tengo internet
+  -buenas noches, mio modem no prende
+  -spotty, necesito soporte tecnico
+  -que tal, tengo problemas de conexion
+  -hola spotty,la red esta muy lenta
+  -hola, ayuda con mi servicio
+  -buenas, no tengo señal
+  -ey spotty
+  -tengo problemas tecnicos, hola
+  -spotty, se cayo el internet en mi casa
+  -intent: consulta_saldo
+  examples: |
+  -hola, cuanto debo
+  -buen dia, quiero saber mi saldo
+  -spotty, dime cuanto tengo que pagar
+  -buenas tardes, consulta de saldo por favor
+  -quiero saber mi estado de cuenta
+  -hola spotty, me puedes decir cuanto debo?
+  -hola, consulta saldo internet
+  -hola, ¿me puedes mandar mi estado de cuenta?
+  -necesito saber mi saldo, spotty
+  -buenas, consulta mi factura por favor
+  -intent: reporte_falla
+  examples: |
+    -el internet no funciona
+    -mi wifi esta fallando
+    -no hay señal
+    -se corto la conexion
+    -el internet no sirve
+    -no jala el wifi
+  -intent: cambio_contraseña
+  examples: |
+  -Quiero cambiar mi contraseña
+  -Olvide mi password
+  -Recuperar mi clave
+  -No puedo acceder
+  -¿Como pongo nueva clave?
+  -Reseteo de contraseña
+  -Quiero mi acceso otra vez
+  -Me bloquearon la cuenta
+  -Necesito un nuevo password
+  -Necesito una contraseña nueva
+  -intent: reconexion
+  examples: |
+  -Ya pague pero no hay internet
+  -¿Cuando me reconectan?
+  -Pague y sigue sin funcionar
+  -Mi servicio no activa
+  -Reconecten mi linea
+  -Hice el pago y nada
+  -Sigo desconectado
+  -intent: nueva_instalacion
+  examples: |
+  -Quiero contratar internet
+  -Como me doy de alta en el servicio
+  -Necesito instalar wifi en mi casa
+  -Info para nueva conexion
+  -Me gustaria contratar un paquete
+  -Me interesa contratar
+  -Denme informacion para ser cliente
+  -¿Que necesito para una instalacion nueva?
+  -Quiero el servicio de internet
+  -¿Tienen promocion para nuevos clientes?
+  -Deseo darme de alta
+  -intent: agendar_visita
+  examples:  |
+  -Necesito que venga un tecnico
+  -Quiero agendar una cita
+  -Quiero cambiar mi direccion de servicio
+  -¿Cuando pueden instalarme?
+  -Reprogramar mi visita tecnica
+  -Quiero mover el servicio a otra casa
+  -Agenden una visita para hoy
+  -Necesito cambiar mi domicilio
+  -intent: cancelacion
+  examples: |
+  .Quiero cancelar mi servicio
+  -Ya no necesito internet
+  -darme de baja
+  -Como cancelo mi contrato
+  -Terminar mi suscripcion
+  -Como dejo el servicio
+  -Quiero la baja definitiva
+  -intent: consulta_saldo
+  examples: |
+  -¿Cuanto debo este mes?
+  -Quiero saber mi saldo pendiente
+  -Ver mi estado de cuenta
+  -¿Mi pago ya aplico?
+  -Cuanto voy a pagar
+  -Necesito mi estado de cuenta
+  -¿Tengo adeudo?
+  -Consultar deuda
+  -Quiero saber si debo
+  -intent: Modificacion_servicio
+  examples: |
+  -Quiero cambiar mi plan
+  -Actualizar mi direccion
+  -Corregir mi nombre en la factura
+  -Subir mi velocidad
+  -Bajar mi paquete
+  -Cambiar titular del servicio
+  -Actualizar datos
+  -Modificar mi contrato
+  -Quiero mas megas
+  -intent: queja_servicio
+  examples: |
+  -El servicio no funciona
+  -No resuelven mis problemas
+  -No me gusta su atencion
+  -Mala calidad
+  -No cumplen con lo prometido
+  -Demasiado caro
+  -intent: retroalimentacion
+  examples: |
+  -Excelente servicio
+  -Sugiero mejorar la velocidad
+  -Gracias por la ayuda
+  -Podrian tener mas promociones
+  -Me encanta su atencion
+  -Felicitaciones
+  -Deberian ampliar la cobertura
+  -intent: informacion_general
+  examples: |
+  -¿Que es SpotUno?
+  -Como funciona el servicio
+  -Que zonas cubren
+  -info sobre la empresa
+  -Que servicios ofrecen
+  -Diganme de su compañia
+  -Como trabajan
+  -intent: venta_servicio_secundario
+  examples: |
+  -Me interesa contratar telefonia
+  -¿tienen servicio de energia?
+  -Info sobre paquetes en combo
+  -Que otros servicios venden
+  -Denme datos de la telefonia
+  -intent: indefinido
+  examples: |
+  -Hola
+  -Buenas tardes
+  -Ok
+  -?
+  -No entendi
+  -Aja
+  
