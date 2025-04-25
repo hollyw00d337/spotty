@@ -1,0 +1,25 @@
+sequenceDiagram
+    Usuario->>+Chatbot: Elige "Pagos y Facturación = Consultar cuenta"
+    activate Chatbot
+    Chatbot->>+Usuario: "¿Cuál es tu número de cuenta?"
+    Usuario->>+Chatbot: "Mi número de cuenta es: (numero_cuenta)"
+    Chatbot->>+API Facturación: Consulta detalles de cuenta (cuenta=123)
+    
+    alt API responde correctamente   
+        API Facturación-->>-Chatbot: {"saldo": "$500", "moneda": "MXN", "estado": "activo"}
+        Chatbot-->>-Usuario: "Tu cuenta está activa con un saldo de $500 MXN."
+    else Error en API
+        Chatbot-->>-Usuario: "No puedo consultar ahora. Inténtelo más tarde."
+    end
+    deactivate Chatbot
+
+    Usuario->>+Chatbot: Elige "Consultar cuenta"
+    activate Chatbot
+    Chatbot->>+API Facturación: Consulta detalles de cuenta (cuenta=456)
+
+    alt API responde correctamente
+        API Facturación-->>-Chatbot: {"saldo": "$0", "moneda": "MXN", "estado": "activo"}
+        Chatbot-->>-Usuario: "No tienes saldo pendiente."
+    else Error en API
+        Chatbot-->>-Usuario: "No puedo consultar en este momento. Inténtelo más tarde."
+    end
