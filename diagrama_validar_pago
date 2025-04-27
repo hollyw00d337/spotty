@@ -1,0 +1,25 @@
+sequenceDiagram
+    participant Usuario
+    participant Chatbot
+    participant API_Facturacion
+
+    Usuario->>+Chatbot: Elige "Pagos y Facturación > Validar Pago"
+    Chatbot->>Usuario: "Ingresa número de cuenta:"
+    Usuario->>Chatbot: "123"
+    
+    Chatbot->>+API_Facturacion: GET /pagos?cuenta=123
+    alt API responde correctamente
+        API_Facturacion-->>Chatbot: {"saldo": 500, "moneda": "MXN", "estado": "activo"}
+        Chatbot-->>Usuario: "No tienes pago reflejado. Saldo pendiente: $500 MXN"
+    else API falla
+        Chatbot-->>Usuario: "No puedo consultar ahora. Intente más tarde"
+    end
+
+    Usuario->>Chatbot: "Validar pago"
+    Chatbot->>API_Facturacion: GET /validar-pago?cuenta=123
+    alt Pago validado
+        API_Facturacion-->>Chatbot: {"saldo": 0, "estado": "pagado"}
+        Chatbot-->>Usuario: "Pago validado. No hay saldo pendiente"
+    else Error en validación
+        Chatbot-->>Usuario: "No se pudo validar el pago"
+    end
