@@ -2,7 +2,7 @@ sequenceDiagram
     Usuario->>+Chatbot: Elige "Pagos y Facturación = Consultar cuenta"
     activate Chatbot
     Chatbot->>+Usuario: "¿Cuál es tu número de cuenta?"
-    Usuario->>+Chatbot: "Mi número de cuenta es: (numero_cuenta)"
+    Usuario->>+Chatbot: "Mi número de cuenta es: (cuenta)"
     Chatbot->>+API Facturación: Consulta detalles de cuenta (cuenta=123)
     
     alt API responde correctamente   
