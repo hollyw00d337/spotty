@@ -12,11 +12,11 @@ sequenceDiagram
         API_Facturacion-->>Chatbot: {"saldo": 750, "moneda": "MXN"}
         Chatbot->>API_Pagos: POST /generar-pago {"monto": 750}
         API_Pagos-->>Chatbot: {"codigo_oxxo": "987654321", "clabe": "0123456789"}
-        Chatbot-->>Usuario: "📌 Saldo: $750 MXN\n🔹 OXXO: Código *987654321*\n🔹 Transferencia: CLABE *0123456789*"
+        Chatbot-->>Usuario: "Saldo: $750 MXN\n🔹 OXXO: Código *987654321*\n🔹 Transferencia: CLABE *0123456789*"
     else Sin saldo
         API_Facturacion-->>Chatbot: {"saldo": 0}
-        Chatbot-->>Usuario: "✅ No hay saldo pendiente"
+        Chatbot-->>Usuario: "No hay saldo pendiente"
     else Error
         API_Facturacion-->>Chatbot: {"error": "Servicio no disponible"}
-        Chatbot-->>Usuario: "⚠️ Intenta más tarde"
+        Chatbot-->>Usuario: "Intenta más tarde"
     end
